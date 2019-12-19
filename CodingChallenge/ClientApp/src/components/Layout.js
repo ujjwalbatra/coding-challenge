@@ -6,10 +6,6 @@ import '../css/layout.css';
 export class Layout extends Component {
     static displayName = Layout.name;
 
-    constructor(props) {
-        super(props);
-    }
-
     render () {
         return (
             <div>

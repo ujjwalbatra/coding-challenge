@@ -1,0 +1,1 @@
+﻿export const ADD_CAR = 'api/vehicle/create';

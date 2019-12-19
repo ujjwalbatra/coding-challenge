@@ -23,9 +23,6 @@
     <Folder Include="Models\" />
     <Folder Include="ClientApp\src\css\" />
     <Folder Include="Controllers\" />
-    <Folder Include="ClientApp\src\actions\" />
-    <Folder Include="ClientApp\src\dispathers\" />
-    <Folder Include="ClientApp\src\stores\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ClientApp\src\components\Footer.js" />

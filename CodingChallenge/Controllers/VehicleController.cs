@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using CodingChallenge.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace test.Controllers
+namespace CodingChallenge.Controllers
 {
-    public class ValuesController : Controller
+    public class VehicleController : Controller
     {
 
         [HttpGet]
@@ -20,19 +20,22 @@ namespace test.Controllers
 
         [HttpPost]
         [Route("api/vehicle/create")]
-        public void CreateVehicle(Vehicle vehicle)
+        public void CreateVehicle([FromBody]string value)
         {
-            if (!ModelState.IsValid)
-                throw new Exception("Invalid Request");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("Hello {0}", value);
+            Console.WriteLine("------------------------------------------------------");
+            //if (!ModelState.IsValid)
+            //    throw new Exception("Invalid Request");
 
-            try
-            {
-                Vehicle.AddVehicle(vehicle);
-            }
-            catch
-            {
-                throw;
-            }
+            //try
+            //{
+            //    Vehicle.AddVehicle(vehicle);
+            //}
+            //catch
+            //{
+            //    throw;
+            //}
         }
 
     }

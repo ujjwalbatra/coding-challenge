@@ -8,10 +8,6 @@ import { AddCar } from './components/AddCar';
 export default class App extends Component {
     static displayName = App.name;
 
-    constructor(props) {
-        super(props);
-    }
-
     render () {
         return (
             <Layout>
