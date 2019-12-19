@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import Dropdown from 'react-bootstrap/Dropdown';
+import {Link} from 'react-router-dom';
+import '../css/home.css';
 
 export class Home extends Component {
-  static displayName = Home.name;
+    static displayName = Home.name;
 
-  render () {
-    return (
-        <React.Fragment>
-                <div class="btn-group">
-                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Action
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-            </div>
-        </React.Fragment>
-    );
-  }
+    constructor(props) {
+        super(props);
+    }
+
+    render () {
+        return (
+            <React.Fragment>
+                <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        Select a vehicle to add
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        <Dropdown.Item tag={Link} to="/add-car">Car</Dropdown.Item>
+                        <Dropdown.Item className='disabled'>Boat (coming soon...)</Dropdown.Item>
+                        <Dropdown.Item className='disabled'>Bike (coming soon...)</Dropdown.Item>
+                    </Dropdown.Menu>
+
+                </Dropdown>
+            </React.Fragment>
+        );
+    }
+
 }
