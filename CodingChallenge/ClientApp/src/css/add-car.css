@@ -11,3 +11,13 @@
     justify-self: center;
     width: 60px;
 }
+
+.error {
+    text-align: center;
+    color: red;
+}
+
+.success {
+    text-align: center;
+    color: green;
+}

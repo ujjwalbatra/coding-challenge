@@ -20,6 +20,8 @@ export class AddCar extends Component {
             num_of_wheels: '',
             engine: '',
             body_type: '',
+            error: false,
+            completed: false
         };
 
         this.handleUpdateMake.bind(this);
@@ -30,7 +32,7 @@ export class AddCar extends Component {
         this.handleUpdateBodyType.bind(this);
 
         this.handleSubmit.bind(this);
-        
+
     }
 
 
@@ -58,35 +60,70 @@ export class AddCar extends Component {
         this.setState({ body_type: event.target.value })
     }
 
+    success() {
+        this.clearState();
+        this.setState({ completed: true })
+    }
+
+    failure() {
+        this.setState({
+            error: true,
+            completed: false
+        })
+    }
+
+    clearState() {
+        this.setState({
+            make: '',
+            model: '',
+            num_of_doors: '',
+            num_of_wheels: '',
+            engine: '',
+            body_type: '',
+            error: false,
+            completed: false
+        });
+    }
+
     handleSubmit(event) {
         event.preventDefault();
         const url = API.ADD_CAR;
         const data = {
-            make: this.state.make,
-            model: this.state.model,
-            num_of_doors: this.state.num_of_doors,
-            num_of_wheels: this.state.num_of_wheels,
-            engine: this.state.engine,
-            body_type: this.state.body_type
+            Make: this.state.make,
+            Model: this.state.model,
+            NumOfDoors: this.state.num_of_doors,
+            NumOfWheels: this.state.num_of_wheels,
+            Engine: this.state.engine,
+            BodyType: this.state.body_type,
+            Type: 'car'
         }
 
         fetch(url, {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
-            body: data
-        }).then(r => console.log(r));
+            body: JSON.stringify(data)
+        }).then(response => {
+            const status = response.status;
+            if (status === 200) this.success();
+            else this.failure();
+        });
     }
 
-    success() {
-       // will do something here
-    }
+    
     
     render() {
-        const { make, model, num_of_doors, num_of_wheels, engine, body_type } = this.state;
+        const { make, model, num_of_doors, num_of_wheels, engine,
+            body_type, error, completed } = this.state;
 
         return (
             <div>
                 <h3 as={Row} className='header-style'>Add a Car</h3>
+                {error &&
+                    <p className="error">Error! Please check your input...</p>
+                }
+                {completed &&
+                    <p className="success">Car added!</p>
+                }
             
                 <Form as={Row} className='display-grid'>
                     <Form.Row>

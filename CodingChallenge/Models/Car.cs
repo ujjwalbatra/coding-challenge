@@ -1,26 +1,25 @@
 ﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CodingChallenge.Models
 {
     public class Car : Vehicle
     {
-        private int NumOfDoors { get; set; }
+        public int NumOfDoors { get; set; }
 
-        private int NumOfWheels { get; set; }
+        public int NumOfWheels { get; set; }
 
-        private string BodyType { get; set; }
+        public string BodyType { get; set; }
 
-        private string Engine { get; set; }
+        public string Engine { get; set; }
 
-
-        public Car(long id,
-                   string type,
-                   string make,
-                   string model,
-                   int numOfDoors,
-                   int numOfWheels,
-                   string bodyType,
-                   string engine) : base(id, type, make, model)
+        public Car(
+            string make,
+            string model,
+            int numOfDoors,
+            int numOfWheels,
+            string bodyType,
+            string engine) : base("car", make, model)
         {
             this.NumOfDoors = numOfDoors;
             this.NumOfWheels = numOfWheels;
