@@ -24,15 +24,6 @@ export class AddCar extends Component {
             completed: false
         };
 
-        this.handleUpdateMake.bind(this);
-        this.handleUpdateModel.bind(this);
-        this.handleUpdateNumberOfDoors.bind(this);
-        this.handleUpdateNumberOfWheels.bind(this);
-        this.handleUpdateEngine.bind(this);
-        this.handleUpdateBodyType.bind(this);
-
-        this.handleSubmit.bind(this);
-
     }
 
 
