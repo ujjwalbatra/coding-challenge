@@ -14,15 +14,11 @@ namespace CodingChallenge.Models
 
         public string Model { get; set; }
 
-        
-
         protected Vehicle(string type, string make, string model)
         {
             this.Type = type;
             this.Make = make;
             this.Model = model;
         }
-
-        
     }
 }

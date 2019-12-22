@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json;
-using CodingChallenge.ClientApp.src.sevices;
+using CodingChallenge.Services;
 using CodingChallenge.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

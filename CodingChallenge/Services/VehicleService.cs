@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using CodingChallenge.Models;
 
-namespace CodingChallenge.ClientApp.src.sevices
+namespace CodingChallenge.Services
 {
     public class VehicleService
     {
-         static List<Vehicle> vehicles = new List<Vehicle>();
+         private static List<Vehicle> vehicles = new List<Vehicle>();
         //this data will ideally be kept in a db
 
-        public static int AddVehicle(Vehicle vehicle)
+        private static int AddVehicle(Vehicle vehicle)
         {
             try
             {
