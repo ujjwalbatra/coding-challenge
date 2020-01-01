@@ -19,9 +19,9 @@ namespace CodingChallenge.Controllers
 
 
         [HttpPost]
-        [Route("api/vehicle/create")]
+        [Route("api/vehicle/create-car")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult CreateVehicle([FromBody] JsonElement vehicle)
+        public IActionResult CreateCar([FromBody] JsonElement vehicle)
         {
             string make = vehicle.GetProperty("Make").ToString();
             string model = vehicle.GetProperty("Model").ToString();
@@ -33,7 +33,7 @@ namespace CodingChallenge.Controllers
 
             try
             {
-                VehicleService.CreateVehicle(type,
+                VehicleService.CreateCar(type,
                     make, model, numOfDoors, numOfWheels, bodyType, engine);
             }
             catch

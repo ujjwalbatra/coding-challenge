@@ -1,1 +1,1 @@
-﻿export const ADD_CAR = 'api/vehicle/create';
+﻿export const ADD_CAR = 'api/vehicle/create-car';

@@ -13,7 +13,7 @@ namespace CodingChallengeTest.ServicesTests
             //test if CreateVehicle is creating and adding the vehicle
             int initialSize = VehicleService.GetAllVehicles().Count;
 
-            VehicleService.CreateVehicle("car", "test", "test", 2, 2, "test",
+            VehicleService.CreateCar("car", "test", "test", 2, 2, "test",
                 "none");
 
             int newSize = VehicleService.GetAllVehicles().Count;
@@ -25,7 +25,7 @@ namespace CodingChallengeTest.ServicesTests
             bool exceptionThrown = false;
             try
             {
-                VehicleService.CreateVehicle("not_car", "test", "test", 2, 2, "test",
+                VehicleService.CreateCar("not_car", "test", "test", 2, 2, "test",
                 "none");
             }
             catch

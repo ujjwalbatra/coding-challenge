@@ -31,7 +31,7 @@ namespace CodingChallenge.Services
             return vehicles;
         }
 
-        public static void CreateVehicle(
+        public static void CreateCar(
             string type,
             string make,
             string model,
